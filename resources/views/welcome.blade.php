@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="slider" class="carousel slide" data-ride="carousel">
+    <div id="slider" class="carousel slide" data-ride="carousel" style="margin-left: 5% ; width: 90vw;  padding:0">
         <ol class="carousel-indicators">
             @foreach ($slides as $index => $slide)
                 <li data-target="#slider" data-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"></li>
@@ -10,7 +10,7 @@
         <div class="carousel-inner">
             @foreach ($slides as $index => $slide)
                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                    <img src="{{ asset($slide['image']) }}" alt="{{ $slide['title'] }}">
+                    <img class="d-block w-100" src="{{ asset($slide['image']) }}" alt="{{ $slide['title'] }}">
                     <div class="carousel-caption">
                         <h3>{{ $slide['title'] }}</h3>
                         <p>{{ $slide['content'] }}</p>
